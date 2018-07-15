@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h5>重写XMLHTTPRequest</h5>
+    <script>
+        function isArray(obj) {
+            return Object.prototype.toString.call(obj) === '[object Array]';
+        }
+        function isObject(obj) {
+            return Object.prototype.toString.call(obj) === '[object Object]';
+        }
+        function extend() {
+            var target = arguments[0] || {};
+            var argumentLen = arguments.length;
+            for(var i = 1; i < argumentLen; i++) {
+                var options = arguments[i];
+                for(var key in options) {
+                    var srcVal = target[key];
+                    var optVal = options[key];
+                    if (optVal === undefined) continue;
+                    if ((isArray(srcVal) && isArray(optVal)) || (isObject(srcVal) && isObject(optVal))) {
+                        optVal = extend(srcVal, optVal);
+                    } 
+                    target[key] = optVal;
+                }
+            }
+            return target;
+        }
+    </script>
+</body>
+</html>
