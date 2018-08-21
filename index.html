@@ -7,52 +7,159 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <title>Hello, world!</title>
+    <style>
+        a {
+            text-decoration: none;
+            color:  #535563;
+        }
+        .app-container {
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .app-header {
+            background-color: white;
+            box-shadow: 0 3px 3px rgba(0,0,0,.18);
+        }
+
+        .nav--shortcut .nav-item--shotcut {
+            text-align: center;
+            margin-top: 35px;
+            margin-bottom: 35px;
+        }
+        .nav--shortcut .nav-item--shotcut h3 {
+            line-height: 45px;
+            color: #6e7177;
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+        .nav--shortcut .nav-item--shotcut p {
+            font-size: 16px;
+            line-height: 30px;
+            color: #929599;
+            letter-spacing: 1px;
+        }
+        .nav--shortcut .nav-item--shotcut .img-wrapper {
+            display: inline-block;
+            background-color: #E2E2E2;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+        .nav--shortcut .nav-item--shotcut:hover .img-wrapper {
+            background-color: #82A6CC;
+        }
+
+        .news-list {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .news-list .title {
+            font-size: 20px;
+            color: #777a80;
+        }
+        .news-list .list {
+            padding: 0;
+        }
+        .news-list .list li {
+            list-style: none;
+            height: 38px;
+            line-height: 38px;
+            font-size: 18px;
+        }
+        .news-list .list li span {
+            display: inline-block;
+            width: 80px;
+            color: #999fa5;
+        }
+        .news-list .list li a {
+            text-decoration: none;
+            color: #555;
+        }
+        
+        .footer {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #074e9c;
+        }
+        .footer .introduce-item {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .footer h3 {
+            padding-bottom: 10px;
+            font-size: 20px;
+            color: white;
+        }
+        .footer ul {
+            padding: 0;
+            list-style: none;
+        }
+        .footer ul a {
+            color: #8fa8ce;
+            height: 28px;
+            line-height: 28px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .copyright {
+            padding: 8px 15px;
+            font-size: 15px;
+            line-height: 30px;
+            background-color: #1a1c2f;
+            color: #90929a;
+        }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="/imgs/logo.png" alt="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav flex-fill justify-content-end">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    产品中心
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">罗斯蒙特</a>
-                        <a class="dropdown-item" href="#">文特斯</a>
-                        <a class="dropdown-item" href="#">丹佛斯</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    解决方案
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">罗斯蒙特</a>
-                        <a class="dropdown-item" href="#">文特斯</a>
-                        <a class="dropdown-item" href="#">丹佛斯</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">资料中心</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">关于京至</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">联系方式</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="container-fluid fixed-top app-header">
+        <nav class="app-container navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="/imgs/logo.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav flex-fill justify-content-end">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        产品中心
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">罗斯蒙特</a>
+                            <a class="dropdown-item" href="#">文特斯</a>
+                            <a class="dropdown-item" href="#">丹佛斯</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        解决方案
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">罗斯蒙特</a>
+                            <a class="dropdown-item" href="#">文特斯</a>
+                            <a class="dropdown-item" href="#">丹佛斯</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">资料中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">关于京至</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">联系方式</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 84px">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -77,10 +184,97 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-        </div>
-    <div class="container">
-        <h1>Hello, world!</h1>
     </div>
+
+    <div class="container-fluid app-container nav--shortcut">
+        <div class="row">
+            <div class="col-sm nav-item--shotcut">
+                <a href="">
+                    <div class="img-wrapper">
+                        <img src="/imgs/products.png" alt="">
+                    </div>
+                    <h3>产品中心</h3>
+                    <p>公司产品分离纯化设备用于生物医药研发和生产过程中的分离纯化，是分离工艺和分离介质的运行设备</p>
+                </a>
+            </div>
+            <div class="col-sm nav-item--shotcut">
+                <a href="">
+                    <div class="img-wrapper">
+                        <img src="/imgs/case.png" alt="">
+                    </div>
+                    <h3>应用案例</h3>
+                    <p>公司产品和服务已经应用于制药公司、大学、科研院所和CRO研发公司，形成了500多个的客户资源</p>
+                </a>
+            </div>
+            <div class="col-sm nav-item--shotcut">
+                <a href="">
+                    <div class="img-wrapper">
+                        <img src="/imgs/service.png" alt="">
+                    </div>
+                    <h3>服务与支持</h3>
+                    <p>利穗科技一直为追求卓越的品质而不懈努力，为客户提供满意的产品、服务和解决方案是我们的目标</p>
+                </a>
+              
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid app-container news-list">
+        <div class="row">
+            <div class="col-lg-5">
+                <img src="/imgs/news.jpg" alt="新闻" width="100%">
+            </div>
+            <div class="col-lg-7" style="padding-top: 10px">
+                <p class="title">行业动态</p>
+                <ul class="list">
+                    <li><span>10/01</span><a href="http://www.lisurescience.com/news/html/?45.html">利穗科技荣获“瞪羚企业”称号</a></li>
+                    <li><span>10/01</span><a href="http://www.lisurescience.com/news/html/?38.html">5月再推新品——Clip系列实验室玻璃柱</a></li>
+                    <li><span>10/01</span><a href="http://www.lisurescience.com/news/html/?37.html">“生物制药下游工艺开发及放大讲座”邀请函</a></li>
+                    <li><span>10/01</span><a href="http://www.lisurescience.com/news/html/?45.html">利穗科技荣获“瞪羚企业”称号</a></li>
+                    <li><span>10/01</span><a href="http://www.lisurescience.com/news/html/?38.html">5月再推新品——Clip系列实验室玻璃柱</a></li>
+                    <li><span>10/01</span><a href="http://www.lisurescience.com/news/html/?37.html">“生物制药下游工艺开发及放大讲座”邀请函</a></li>
+                </ul>
+                <!-- <a class="more" href="">更多</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="app-container">
+            <div class="row introduces text-md-center">
+                <div class="col-md introduce-item">
+                    <h3>京至科技</h3>
+                    <ul class="row">
+                        <li class="col-4 col-md-12"><a href="">公司简介</a></li>
+                        <li class="col-4 col-md-12"><a href="">加入京至</a></li>
+                        <li class="col-4 col-md-12"><a href="">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="col-md introduce-item">
+                    <h3>解决方案</h3>
+                    <ul class="row">
+                        <li class="col-4 col-md-12"><a href="">层析模块</a></li>
+                        <li class="col-4 col-md-12"><a href="">配液模块</a></li>
+                        <li class="col-4 col-md-12"><a href="">过滤模块</a></li>
+                    </ul>
+                </div>
+                <div class="col-md introduce-item">
+                    <h3>客户服务</h3>
+                    <ul class="row">
+                        <li class="col-4 col-md-12"><a href="">资料下载</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid copyright">
+        <div class="app-container clearfix">
+            <div class="float-left">Copyright ©2016 Lisure Inc. All Rights Reserved.</div>
+            <div class="float-right">备案号：苏ICP备17062769号</div>
+        </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
